@@ -11,7 +11,8 @@ config :modest_greeter, ModestGreeter.Endpoint,
   secret_key_base: "ltxBR/eKOVrpSXB/fYoOjc+IQOEgK18U4EN1IWI0v8ssquVzv1NdYV9ODUDtxelL",
   render_errors: [view: ModestGreeter.ErrorView, accepts: ~w(html json)],
   pubsub: [name: ModestGreeter.PubSub,
-           adapter: Phoenix.PubSub.PG2]
+           adapter: Phoenix.PubSub.PG2],
+  http: [protocol_options: [max_header_value_length: 8192]]
 
 # Configures Elixir's Logger
 config :logger, :console,

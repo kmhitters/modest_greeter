@@ -9,18 +9,10 @@ defmodule ModestGreeter.Router do
     plug :put_secure_browser_headers
   end
 
-  pipeline :api do
-    plug :accepts, ["json"]
-  end
-
   scope "/", ModestGreeter do
-    pipe_through :browser # Use the default browser stack
+    pipe_through :browser
+    get "/hello", HelloController, :show
 
-    get "/", PageController, :index
+    get "/hello/:name", HelloController, :show
   end
-
-  # Other scopes may use custom stacks.
-  # scope "/api", ModestGreeter do
-  #   pipe_through :api
-  # end
 end
