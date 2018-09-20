@@ -10,9 +10,9 @@
     <title>ModestGreeter(<%= @name %>)</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   <body>
-    </head>
+    <header>
       <h1>ModestGreeter</h1>
-    </head>
+    </header>
     <main>
       <%= render @view_module, @view_template, assigns %>
     </main>
